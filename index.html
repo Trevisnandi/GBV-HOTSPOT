@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GBV Reporting Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+    
+</head>
+<body>
+    <header>
+        <h1>GBV Reporting Dashboard</h1>
+    </header>
+    <div class="container">
+        <!-- Reporting Card -->
+        <div class="card">
+            <h3>Report an Incident</h3>
+            <p>If you or someone you know has been affected, please click below to report anonymously.</p>
+            <button onclick="openForm('reportForm')">Report Now</button>
+        </div>
+
+        <!-- Tracking Card -->
+        <div class="card">
+            <h3>Track a Case</h3>
+            <p>Track the progress of a previously reported incident.</p>
+            <button onclick="openForm('trackForm')">Track Case</button>
+        </div>
+
+        <!-- Resources Card -->
+        <div class="card">
+            <h3>Resources</h3>
+            <p>Find support services, helplines, and informational materials on GBV.</p>
+            <button>Learn More</button>
+        </div>
+    </div>
+
+    <!-- Modal Forms -->
+    <div id="reportForm" class="hidden">
+        <h2>Report an Incident</h2>
+        <form onsubmit="submitReport(event)">
+            <label for="details">Details:</label>
+            <textarea id="details" name="details" required></textarea>
+            <button type="submit">Submit</button>
+            <button type="button" onclick="closeForm('reportForm')">Cancel</button>
+        </form>
+    </div>
+
+    <div id="trackForm" class="hidden">
+        <h2>Track a Case</h2>
+        <form onsubmit="submitTrack(event)">
+            <label for="caseId">Case ID:</label>
+            <input type="text" id="caseId" name="caseId" required>
+            <button type="submit">Submit</button>
+            <button type="button" onclick="closeForm('trackForm')">Cancel</button>
+        </form>
+    </div>
+
+    <footer>
+        &copy; 2024 GBV Reporting Dashboard | Secure, Anonymous & Confidential by -Trev Nandi
+    </footer>
+
+    <script src="script.js"></script>
+    
+</body>
+</html>
